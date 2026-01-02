@@ -1,0 +1,13 @@
+[project]
+name = "mcp_project"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "arxiv>=2.3.1",
+    "mcp>=1.25.0",
+    "nest-asyncio>=1.6.0",
+    "ollama>=0.6.1",
+    "python-dotenv>=1.2.1",
+]
