@@ -74,11 +74,9 @@ def extract_info(paper_id: str) -> str:
 #     mcp.run(transport="sse") # It's stdio for local. 
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 10000))
+    # port = int(os.getenv("MCP_PORT", "8000"))
     mcp.run(
-        transport="http",
-        host="0.0.0.0",
-        port=port,
+        transport="sse"
     )
 
 
