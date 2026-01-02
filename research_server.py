@@ -76,7 +76,7 @@ def extract_info(paper_id: str) -> str:
 if __name__ == "__main__":
     # port = int(os.getenv("MCP_PORT", "8000"))
     mcp.run(
-        transport="sse"
+        transport="stdio"
     )
 
 

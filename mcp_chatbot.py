@@ -78,7 +78,7 @@ User query:
         return topic, max_results
 
     async def run_search(self, topic: str, max_results: int):
-        print(f"🔍 Searching arXiv for '{topic}' ({max_results} papers)...")
+        print(f"Searching arXiv for '{topic}' ({max_results} papers)...")
 
         result = await self.session.call_tool(
             "search_papers",
@@ -90,10 +90,10 @@ User query:
         ]
 
         if not paper_ids:
-            print("💬 Assistant: No papers found.")
+            print("Assistant: No papers found.")
             return
 
-        print("📄 Papers found:")
+        print(" Papers found:")
         for pid in paper_ids:
             print(f" - {pid}")
 

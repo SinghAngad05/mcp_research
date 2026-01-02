@@ -76,13 +76,13 @@ class MCP_Chatbot:
                         tool_name = parts[0].strip()
                         tool_args = json.loads(parts[1].strip())
                         
-                        print(f"\n🔍 Using tool: {tool_name}")
+                        print(f"\n Using tool: {tool_name}")
                         print(f"   Args: {tool_args}\n")
                         
                         # Execute the tool
                         tool_result = execute_tool(tool_name, tool_args)
                         
-                        print(f"📄 Tool result:\n{tool_result}\n")
+                        print(f" Tool result:\n{tool_result}\n")
                         
                         # Now ask Ollama to provide a helpful response based on the tool result
                         followup_prompt = f"{system_prompt}\n\nUser: {query}\n\nTool used: {tool_name}\nTool result:\n{tool_result}\n\nProvide a helpful summary for the user:"
@@ -94,7 +94,7 @@ class MCP_Chatbot:
                         )
                         
                         if followup_response and 'response' in followup_response:
-                            print(f"💬 Assistant: {followup_response['response'].strip()}")
+                            print(f" Assistant: {followup_response['response'].strip()}")
                         return
                 except (json.JSONDecodeError, ValueError) as e:
                     print(f"Could not parse tool call: {e}")
@@ -102,7 +102,7 @@ class MCP_Chatbot:
                     return
             
             # No tool call, just print the response
-            print(f"💬 Assistant: {assistant_response}")
+            print(f" Assistant: {assistant_response}")
                 
         except ConnectionError:
             print("❌ Error: Ollama is not running!")
